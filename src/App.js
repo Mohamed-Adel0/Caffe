@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Footer from "./Components/Footer/Footer";
+import FourHome from "./Components/FourHome/FourHome";
+import Home from "./Components/Home/Home";
+import Navbar from "./Components/NavBar/Navbar";
+import ThreeHome from "./Components/ThreeHome/ThreeHome";
+import TwoHome from "./Components/TwoHome/TwoHome";
+import { Route, Routes } from "react-router-dom";
+import API from "./Components/API/API";
+import CardApi from "./Components/CardApi/CardApi";
+// import NotFound from "./Components/NotFound/NotFound";
+import Espresso from "./Components/ThreeHome/Espressso/Espresso";
+import Cappuccino from "./Components/ThreeHome/Cappuccino/Cappuccino";
+import American from "./Components/ThreeHome/American/American";
+// import FiveHome from "./Components/FiveHome/FiveHome";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Home />
+      <Routes>
+        <Route path="products" element={<API />} />
+        <Route path="products/:id" element={<CardApi />} />
+        {/* <Route path="*" element={<NotFound />} /> */}
+      </Routes>
+      <TwoHome />
+      <Routes>
+        <Route
+          path="/"
+          element={<ThreeHome />}
+          children={<Route path="/" element={<Espresso />} />}
+        />
+        <Route
+          path="/"
+          element={<ThreeHome />}
+          children={<Route path="Cappuccino" element={<Cappuccino />} />}
+        />
+        <Route
+          path="/"
+          element={<ThreeHome />}
+          children={<Route path="American" element={<American />} />}
+        />
+      </Routes>
+      <FourHome />
+      <Footer />
     </div>
   );
 }

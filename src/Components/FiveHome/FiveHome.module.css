@@ -1,0 +1,30 @@
+.parent {
+  width: 100%;
+  height: 100vh;
+  background-color: #242424;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.cotaniner {
+  width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 500px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px !important;
+  z-index: 50;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+}

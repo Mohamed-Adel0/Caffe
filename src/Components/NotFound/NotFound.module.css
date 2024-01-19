@@ -1,0 +1,14 @@
+.parent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242424;
+  position: fixed;
+  z-index: 30;
+}
+.parent img {
+  width: 100%;
+  height: 100%;
+}
